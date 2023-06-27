@@ -1,3 +1,16 @@
+//var is global scope and it can change any time if we use it again
+//let is block scope and it can't change even if we use it again
+//const is block scope and it can't change , it's value is fixed and con't modify also
+
+var var1 = 100;
+console.log(var1);
+var1 = 200;
+console.log(var1);
+let var2 = 150;
+console.log(var2);
+var2 = 250;
+console.log(var2);//error
+
 //variable declare
 let age = 22;
 let year = 2022;
@@ -220,7 +233,7 @@ if (checkAge(age2)) {
     alert('Access denied');
 }
 
-//object in js(OOP)
+
 
 //object method 
 let person = {
@@ -228,7 +241,7 @@ let person = {
     first_name: "John",
     last_name: "Doe",
     age: 30,
-    dob : "12-12-1999",
+    dob: "12-12-1999",
 
     //function as property value
     fullname: function () {
@@ -334,6 +347,35 @@ for (let key in user1) {
     alert(user1[key]); // John, 30, true
 }
 
+//object oriented programming(oop)
+
+//class create
+class google {
+    constructor(fname, lname, dob) {
+        this.first_name = fname;
+        this.last_name = lname;
+        this.dateofbirth = dob;
+    }
+    //function of age calculation
+    ageCalculation() {
+        let birthday = new Date(this.dateofbirth);
+        let diff = Date.now() - birthday.getTime();
+        let age = new Date(diff);
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+        //why 1970 is used for more info https://www.epochconverter.com/ 
+    }
+
+}
+
+//object creation
+let person1 = new google('jit', 'roy', '25-10-1999');
+let person2 = new google('prosenjit', 'roy', '12-12-1999');
+console.log(person1);
+console.log(person2);
+console.log(person1.ageCalculation());
+
+
+
 //CLASS 
 class User {
     constructor(name) {
@@ -410,3 +452,48 @@ document.getElementById("output").innerHTML = show(10, 23);
 //NO PARAMETER
 let display = () => console.log("Hello");
 display();
+
+//Math
+let value;
+value = Math.PI;
+value = Math.E;
+value = Math.round(3.4); //decimal to int (output: 3)
+value = Math.ceil(1.9);// output : 2 
+value = Math.floor(2.4); //output : 2
+value = Math.sqrt(64); //output : 8
+value = Math.abs(-3); //output : 3 ;positive value
+value = Math.pow(8, 2); //output : 64 ; 8^2
+value = Math.min(2, 33, 4, 1, 55, 6, 3, -2); //output : -2
+value = Math.max(2, 33, 4, 1, 55, 6, 3, -2); //output : 55
+value = Math.random(); //output : 0.123456789
+value = Math.floor(Math.random() * 20 + 1); //output : 1-20 any vlaue
+console.log(value); //output : 1-20
+
+// Date and time object
+let val;
+let today = new Date(); //current date and time stored in today variable
+console.log(today);
+console.log(typeof today);
+
+//birthday in different format
+let birthday = new Date("12-12-1999 12:00:00");
+birthday = new Date("December 12 1999");
+birthday = new Date("12/12/1999");
+
+val = today.getMonth(); //output : 0-11
+val = today.getDate(); //output : 1-31
+val = today.getDay(); //output : 0-6
+val = today.getFullYear(); //output : 2020
+val = today.getHours(); //output : 0-23
+val = today.getMinutes(); //output : 0-59
+val = today.getSeconds(); //output : 0-59
+val = today.getMilliseconds(); //output : 0-999
+val = today.getTime(); //output : timestamp
+birthday.setMonth(2); //output : 2
+birthday.setDate(12);      //output : 12
+birthday.setFullYear(1999);     //output : 1999 
+birthday.setHours(3);   //output : 3
+birthday.setMinutes(30);    //output : 30
+birthday.setSeconds(25);    //output : 25
+birthday.setMilliseconds(123);  //output : 123
+console.log(birthday);  //output : 1999-03-12T03:30:25.123Z
