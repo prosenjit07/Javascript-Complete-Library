@@ -1,6 +1,6 @@
 # Javascript-Complete-Library
 This repository will help you with a basic understanding of js syntax and implementation concepts.
-Table of Contents
+#Table of Contents
 1.	Types
 2.	References
 3.	Objects
