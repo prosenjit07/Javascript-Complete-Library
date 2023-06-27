@@ -38,4 +38,6 @@ Table of Contents
 35.	The JavaScript Style Guide Guide
 36.	API Fetching
 37. JS Promises
+38. Asynchronous Programming
+39. Synchronous Programming
 
