@@ -221,10 +221,29 @@ if (checkAge(age2)) {
 }
 
 //object in js(OOP)
+
+//object method 
+let person = {
+    //number, string , date, arrray, object
+    first_name: "John",
+    last_name: "Doe",
+    age: 30,
+    dob : "12-12-1999",
+
+    //function as property value
+    fullname: function () {
+        return this.first_name + " " + this.last_name;
+    }
+};
+console.log(person.fullname());
+console.log(person.dob);
+
+
 let user = {
     name: "Jit",
     age: 23,
 };
+
 
 console.log(user.name);//object access 
 console.log(user.age);
@@ -284,6 +303,7 @@ let user4 = {
     }
 };
 user4.sayHi(); // John
+
 
 //METHOD IN CONSTRUCTOR
 //constructor is a special type of function called to create an object. It prepares the new object for use, often accepting arguments that the constructor uses to set required member variables
